@@ -7,6 +7,7 @@ import {
     UserOutlined,
     LogoutOutlined,
     DownOutlined,
+    CodeSandboxOutlined,
 } from "@ant-design/icons";
 import {
     Col,
@@ -77,6 +78,15 @@ export default function Authenticated({ header, children }) {
                             label: (
                                 <Link href={window.route("dashboard")}>
                                     Dashboard
+                                </Link>
+                            ),
+                        },
+                        {
+                            key: "addproduct",
+                            icon: <CodeSandboxOutlined />,
+                            label: (
+                                <Link href={window.route("products.index")}>
+                                    Add Product
                                 </Link>
                             ),
                         },
