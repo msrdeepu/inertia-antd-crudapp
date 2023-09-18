@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->text("productname");
-            $table->bigInteger("productprice");
+            $table->text("productname")->nullable();
+            $table->bigInteger("productprice")->nullable();
             $table->text("discount")->nullable();
             $table->text("productimage")->nullable();
             $table->text("description")->nullable();

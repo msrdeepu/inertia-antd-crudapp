@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-
+use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     /**
@@ -24,7 +24,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+            $Branch = Product::get([ 'id AS key']);
+            return Inertia::render('Branches/Createbranch', [
+            'user' => $user,
+            'record'=> new Product(),
+            ]);
     }
 
     /**
@@ -32,7 +37,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        
+        $data= Product::create([
+         
+        ]);
+        // $data -> save();
+        return to_route('dashboard');
     }
 
     /**
